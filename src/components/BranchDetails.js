@@ -346,7 +346,7 @@ const BranchDetails = () => {
                   onChange={() => setCheckboxValue(!checkboxValue)}
                   type="checkbox"
                 />{" "}
-                Check favourites
+                Check Favourite Branches
               </Label>
             </FormGroup>
           </Form>
