@@ -170,15 +170,15 @@ const BranchDetails = () => {
     }
   }, [searchQuery]);
   return (
-    <div>
-      <h2 align="center">Bank Branches</h2>
+    <div className="container">
+      
       <div>
         <div>
           <Form>
             <FormGroup style={{ display: "flex" }}>
               <Label for="citySelection">City :</Label> {"   "}
               <Input
-                style={{ width: "20%" }}
+                style={{ width: "20%" ,border :"1px solid grey",borderRadius : '5px'  }}
                 type="select"
                 name="citySelection"
                 id="citySelection"
@@ -196,7 +196,7 @@ const BranchDetails = () => {
                 Search:
               </Label>
               <DebounceInput
-                style={{ width: "40%" }}
+                style={{ width: "40%",  border :"1px solid grey",borderRadius : '5px' }}
                 placeholder="Search by ifsc, branch , address, city, state etc......"
                 minLength={3}
                 debounceTimeout={100}
@@ -279,9 +279,9 @@ const BranchDetails = () => {
           )}
         </div>
       </div>
-      <div className="row">
-        <div className="col-12">
-          <Pagination size="md" >
+      <div align="center" >
+        <div >
+          <Pagination  size="md" >
             <PaginationItem>
               <PaginationLink onClick={() => setOffset(0)} first />
             </PaginationItem>
@@ -342,7 +342,7 @@ const BranchDetails = () => {
                 check
               >
                 <Input
-                  style={{ height: "40px", width: "50px", marginLeft: "15rem" }}
+                  style={{ height: "20px", width: "20px", borderRadius  : "50%" }}
                   onChange={() => setCheckboxValue(!checkboxValue)}
                   type="checkbox"
                 />{" "}
