@@ -170,7 +170,7 @@ const BranchDetails = () => {
     }
   }, [searchQuery]);
   return (
-    <div className="container">
+    <div align="center" className="container">
       
       <div>
         <div>
@@ -178,7 +178,7 @@ const BranchDetails = () => {
             <FormGroup style={{ display: "flex" }}>
               <Label for="citySelection">City :</Label> {"   "}
               <Input
-                style={{ width: "20%" ,border :"1px solid grey",borderRadius : '5px'  }}
+                style={{ width: "20%" ,border :"2px solid grey",borderRadius : '20px'  }}
                 type="select"
                 name="citySelection"
                 id="citySelection"
@@ -196,7 +196,7 @@ const BranchDetails = () => {
                 Search:
               </Label>
               <DebounceInput
-                style={{ width: "40%",  border :"1px solid grey",borderRadius : '5px' }}
+                style={{ width: "40%" ,border :"2px solid grey",borderRadius : '20px'  }}
                 placeholder="Search by ifsc, branch , address, city, state etc......"
                 minLength={3}
                 debounceTimeout={100}
@@ -236,7 +236,7 @@ const BranchDetails = () => {
                       <td>{branch.state}</td>
                       <td>
                         <Button
-                          style={{ background: "black", width: "100px" }}
+                           style={{width : "100px",background : "black", border: "2px solid grey", borderRadius  : "30px" }}
                           onClick={() => {
                             var fav = JSON.parse(
                               localStorage.getItem("favourites")
@@ -279,14 +279,14 @@ const BranchDetails = () => {
           )}
         </div>
       </div>
-      <div align="center" >
+      <div salign="center" >
         <div >
-          <Pagination  size="md" >
-            <PaginationItem>
+          <Pagination size="md" >
+            <PaginationItem  >
               <PaginationLink onClick={() => setOffset(0)} first />
             </PaginationItem>
             <PaginationItem>
-              <PaginationLink
+              <PaginationLink 
                 onClick={() => {
                   if (offset > 0) setOffset(offset - limit);
                 }}
@@ -317,9 +317,9 @@ const BranchDetails = () => {
           </Pagination>
           <Form>
             <FormGroup style={{ display: "flex", alignItems: "center" }}>
-              <Label for="limitChange">Rows / Page: </Label>
+              <Label for="limitChange">Rows : </Label>
               <Input
-                style={{ width: "10%" }}
+                style={{color : "white",width : "100px",background : "black", border: "2px solid grey", borderRadius  : "30px" }} 
                 type="select"
                 name="limitChange"
                 id="limitChange"
@@ -342,11 +342,12 @@ const BranchDetails = () => {
                 check
               >
                 <Input
-                  style={{ height: "20px", width: "20px", borderRadius  : "50%" }}
-                  onChange={() => setCheckboxValue(!checkboxValue)}
-                  type="checkbox"
+                  style={{color : "white",background: "black",  border: "2px solid grey", borderRadius  : "30px" }}
+                  onClick={() => setCheckboxValue(!checkboxValue)}
+                  type="button"
+                  value={checkboxValue ? "Hide Favourite ":" Show Favourite"}
                 />{" "}
-                Check Favourite Branches
+                
               </Label>
             </FormGroup>
           </Form>
